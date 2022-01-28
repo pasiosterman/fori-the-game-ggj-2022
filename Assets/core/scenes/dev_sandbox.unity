@@ -665,7 +665,11 @@ PrefabInstance:
       objectReference: {fileID: 718003495}
     - target: {fileID: 4469975428162454267, guid: 90a6b12f9ea54f7699fed85241d2a5f8, type: 3}
       propertyPath: breakFactor
-      value: 0.5
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469975428162454267, guid: 90a6b12f9ea54f7699fed85241d2a5f8, type: 3}
+      propertyPath: maxVelocityChange
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6554438713655976780, guid: 90a6b12f9ea54f7699fed85241d2a5f8, type: 3}
       propertyPath: m_LocalRotation.w

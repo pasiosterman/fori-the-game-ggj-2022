@@ -7,13 +7,12 @@ public class ForiMovement : Mover
 {
     public Transform pointA;
     public Transform pointB;
-
     public float maxSpeed = 5.0f;
-    public float breakFactor = 0.3f;
+    public float maxVelocityChange = 1.0f;
 
+    private float movement = 0.0f;
     private Rigidbody rbody;
-    private float movement;
-
+    
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
@@ -31,21 +30,26 @@ public class ForiMovement : Mover
         }
         else
         {
-            Stop();
+            MoveTowardsTargetTransform(null);
         }
     }
 
     private void MoveTowardsTargetTransform(Transform target)
     {
+        if(rbody == null) return;
 
-        Vector3 dir = (target.position - transform.position).normalized;
-        rbody.velocity = dir * maxSpeed;
-    }
+        Vector3 desiredVelocity = Vector3.zero;
+        if(target != null){
+            Vector3 dir = (target.position - transform.position).normalized;
+            desiredVelocity = dir * maxSpeed;
+        }
 
-    private void Stop()
-    {
-        // rbody.velocity = rbody.velocity * 0.9f;
-        rbody.AddForce(-breakFactor * rbody.velocity);
+        Vector3 velocity = rbody.velocity;
+        Vector3 velocityChange = desiredVelocity - velocity;
+        velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+        velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+        velocityChange.y = 0;
+        rbody.AddForce(velocityChange, ForceMode.VelocityChange);
     }
 
     public override void Move(Vector2 applyMovement)
