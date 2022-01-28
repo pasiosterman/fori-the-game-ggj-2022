@@ -69,3 +69,4 @@ Material:
     - _ShallowColor: {r: 0.44313726, g: 0.9137255, b: 0.6627451, a: 1}
     - _SparkleColor: {r: 0.54901963, g: 0.9607843, b: 0.8156863, a: 1}
     - _SunSpecularColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
