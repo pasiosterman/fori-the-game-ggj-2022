@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour
 {
     public Vector2 Movement { get; set; }
+    public Mover mover;
     
     void Update()
     {
@@ -13,5 +14,9 @@ public class PlayerInputs : MonoBehaviour
             Input.GetAxisRaw(UnityConstants.HORIZONTAL_AXIS), 
             Input.GetAxisRaw(UnityConstants.VERTICAL_AXIS)
         );
+
+        if(mover != null){
+            mover.Move(Movement);
+        }
     }
 }
