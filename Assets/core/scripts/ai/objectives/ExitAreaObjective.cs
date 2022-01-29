@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ExitAreaObjective : BaseObjective
 {
-    // Start is called before the first frame update
-    void Start()
+    public NodeBehavior[] areaExits;
+
+    public override void StartObjective(AIController controller)
     {
-        
+        NodeBehavior nodeBehavior = areaExits[Random.Range(0, areaExits.Length)];
+        controller.NavigateToPosition(nodeBehavior.transform.position);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ExecuteObjective(AIController controller)
     {
-        
+        if(controller.HasArrived){
+            controller.CompleteCurrentObjective();
+        }
     }
 }

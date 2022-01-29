@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class BoardForiObjective : BaseObjective
 {
-    public NodeBehavior foriEntryPoint;
+    const string QUEUE_FORI = "QueuedFori";
+
+    public ForiStop foriStop;
 
     public override void StartObjective(AIController controller)
     {
         Debug.Log("Start board föri objective!");
-        controller.MoveToPosition(foriEntryPoint.transform.position);
+        controller.NavigateToPosition(foriStop.transform.position);
     }
 
     public override void ExecuteObjective(AIController controller)
     {
-        if(controller.HasArrived){
-            Debug.Log("mission complete!");
-            controller.CompleteCurrentObjective();
+        if(controller.HasArrived && !controller.flags.Contains(QUEUE_FORI) ){
+
+            foriStop.QueueToFori(controller.Mounter);
+            controller.flags.Add(QUEUE_FORI);
+        }
+        else{
+            if(controller.Mounter.IsMounted){
+                controller.CompleteCurrentObjective();
+            }
         }
     }
 }

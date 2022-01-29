@@ -12,7 +12,7 @@ public class NavigationInput : MonoBehaviour
     public float arriveRadius = 0.1f;
     public bool arrived = false;
     public Vector3 randomPositionOffset = Vector3.zero;
-    public Vector3 TargetPosition { get; set; }
+    Vector3 targetPosition;
     Vector3 currentTarget = Vector3.zero;
     Node[] currentPath;
     Vector3 currentOffset = Vector3.zero;
@@ -20,20 +20,20 @@ public class NavigationInput : MonoBehaviour
 
     void Start()
     {
-        if(TargetPosition == Vector3.zero){
-            TargetPosition = transform.position;
+        if(targetPosition == Vector3.zero){
+            targetPosition = transform.position;
         }
     }
 
     void Update()
     {
         if(overrideTargetPosition != null){
-            TargetPosition = overrideTargetPosition.transform.position;
+            targetPosition = overrideTargetPosition.transform.position;
         }
 
-        if (Vector3.Distance(TargetPosition, currentTarget) > 0.1f)
+        if (Vector3.Distance(targetPosition, currentTarget) > 0.1f)
         {
-            ChangeNavigationTarget(TargetPosition);
+            ChangeNavigationTarget(targetPosition);
         }
 
         Vector3 positionDelta = (GetCurrentMoveTowardsPosition() - transform.position);
@@ -53,6 +53,11 @@ public class NavigationInput : MonoBehaviour
         {
             mover.Move(Vector3.zero);
         }
+    }
+
+    public void NavigateTowards(Vector3 position){
+        targetPosition = position;
+        arrived = false;
     }
 
     private void StartMovingTowardsNextPointInPath()
@@ -81,7 +86,7 @@ public class NavigationInput : MonoBehaviour
         }
     }
 
-    public void ChangeNavigationTarget(Vector3 newTarget)
+    private void ChangeNavigationTarget(Vector3 newTarget)
     {
         currentTarget = newTarget;
         currentPath = nodeGroupBehavior.FindPath(transform.position, currentTarget);

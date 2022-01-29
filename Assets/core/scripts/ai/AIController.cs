@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Mounter)), RequireComponent(typeof(NavigationInput))]
 public class AIController : MonoBehaviour
 {
     public float updateFrequency = 1;
-    public HashSet<string> flags = new HashSet<string>();
-
     NavigationInput navigationInput;
+    Mounter mounter; 
     List<BaseObjective> objectives = new List<BaseObjective>();
     BaseObjective currentObjective;
     float tickTimer = 0.0f;
@@ -16,6 +16,7 @@ public class AIController : MonoBehaviour
     void Start()
     {
         navigationInput = GetComponent<NavigationInput>();
+        mounter = GetComponent<Mounter>();
     }
 
     public void CompleteCurrentObjective()
@@ -49,16 +50,18 @@ public class AIController : MonoBehaviour
         }
     }
 
-    public void MoveToPosition(Vector3 position)
+    public void NavigateToPosition(Vector3 position)
     {
-        navigationInput.TargetPosition = position;
+        navigationInput.NavigateTowards(position);
     }
-
-    public bool HasArrived { get { return navigationInput.arrived; } }
 
     public void AssignObjectives(BaseObjective[] newObjectives)
     {
         objectives.Clear();
         objectives.AddRange(newObjectives);
     }
+
+    public HashSet<string> flags = new HashSet<string>();
+    public Mounter Mounter { get{ return mounter; } }
+    public bool HasArrived { get { return navigationInput.arrived; } }
 }
