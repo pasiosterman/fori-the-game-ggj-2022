@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SpawnConfiguration
+public class SpawnerWaveEntry
 {
     public GameObject Prefab;
-    public int rate = 1;
+    public int chance = 1;
 }
