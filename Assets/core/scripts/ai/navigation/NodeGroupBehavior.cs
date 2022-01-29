@@ -4,35 +4,7 @@ using UnityEngine;
 
 public class NodeGroupBehavior : MonoBehaviour
 {
-    public NodeBehavior startNode;
-    public NodeBehavior endNode;
-
     private NodeGroup nodeGroup;
-
-    // [ContextMenu("print path")]
-    // public void PrintPath(){
-
-    //     NodeGroup nodeGroup = CreateNodeGroup();
-        
-    //     Node start = nodeGroup.GetNodeForNodeBehavior(startNode);
-    //     Node end = nodeGroup.GetNodeForNodeBehavior(endNode);
-
-    //     Node[] path = nodeGroup.FindPath(start, end);
-    //     string output = "Path lenght: " + path.Length + "\n";
-    //     for (int i = 0; i < path.Length; i++)
-    //     {
-    //         output += i + ": " + path[i].name + "\n";
-    //     }
-    //     Debug.Log(output);
-
-    //     path = nodeGroup.FindPath(end, start);
-    //     output = "Path lenght: " + path.Length + "\n";
-    //     for (int i = 0; i < path.Length; i++)
-    //     {
-    //         output += i + ": " + path[i].name + "\n";
-    //     }
-    //     Debug.Log(output);
-    // }
 
     private void Awake() {
         nodeGroup = CreateNodeGroup();

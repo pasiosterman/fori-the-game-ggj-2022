@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2129829223569658807}
   - component: {fileID: 6383875940740637169}
   - component: {fileID: 8997827808046557364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jolla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1001 &8964460050485723010
 PrefabInstance:
@@ -137,9 +137,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 59b65037650f7ed4b91013abc35595f0, type: 2}
+    - target: {fileID: -2106254394759184511, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1305434731756442476, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
       propertyPath: m_Name
       value: jolla
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037938717997318411, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2154310290321907264, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -149,6 +165,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 59775644f916b7c48807d2eba38f2e20, type: 2}
+    - target: {fileID: 7576057403754878485, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8769391881665453848, guid: 1efcf149a211ea04ea06d9f3d96a923e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

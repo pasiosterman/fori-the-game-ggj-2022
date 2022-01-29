@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3791813324114224092}
   - component: {fileID: 843511564301061905}
   - component: {fileID: 2010669028598638183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Purjevene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1001 &4407409534368570895
 PrefabInstance:
@@ -141,6 +141,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d961d89d12e622f479ef76581ae2e9be, type: 2}
+    - target: {fileID: -5211398948530485836, guid: 0052e523287ad294ea2ebc767bf930be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -4432862186631767234, guid: 0052e523287ad294ea2ebc767bf930be, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -148,6 +152,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0052e523287ad294ea2ebc767bf930be, type: 3}
       propertyPath: m_Name
       value: purjevene
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0052e523287ad294ea2ebc767bf930be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806563029426342366, guid: 0052e523287ad294ea2ebc767bf930be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366266842701513194, guid: 0052e523287ad294ea2ebc767bf930be, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0052e523287ad294ea2ebc767bf930be, type: 3}
