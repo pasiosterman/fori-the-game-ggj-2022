@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    
+    public SpawnerWaveConfiguration Wave1;
 }
