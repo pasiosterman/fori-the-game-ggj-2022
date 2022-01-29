@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f74e6e1928a66ed89d20c12014d3bb, type: 3}
   m_Name: WaveConfiguration_Easy
   m_EditorClassIdentifier: 
-  spawnConfigurations:
-  - Prefab: {fileID: 0}
-    rate: 1
+  spawnerWaveEntries:
+  - Prefab: {fileID: 1378835575462117692, guid: c743399dcfe2a53429c6743115273af2, type: 3}
+    chance: 20
+  - Prefab: {fileID: 1271638708382310067, guid: 456817e3d4f5e3747a39edabf3b3f7e2, type: 3}
+    chance: 10
+  spawnRate: 5
