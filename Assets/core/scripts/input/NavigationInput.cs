@@ -5,36 +5,35 @@ using UnityEngine;
 public class NavigationInput : MonoBehaviour
 {
     public NodeGroupBehavior nodeGroupBehavior;
-    public Vector3 targetPosition = Vector3.zero;
     public Mover mover;
-
 
     public Transform overrideTargetPosition;
 
     public float arriveRadius = 0.1f;
     public bool arrived = false;
     public Vector3 randomPositionOffset = Vector3.zero;
-
-    private Vector3 currentTarget = Vector3.zero;
-    private Node[] currentPath;
-    private Vector3 currentOffset = Vector3.zero;
-
-    private int currentPathIndex;
+    public Vector3 TargetPosition { get; set; }
+    Vector3 currentTarget = Vector3.zero;
+    Node[] currentPath;
+    Vector3 currentOffset = Vector3.zero;
+    int currentPathIndex;
 
     void Start()
     {
-        targetPosition = transform.position;
+        if(TargetPosition == Vector3.zero){
+            TargetPosition = transform.position;
+        }
     }
 
     void Update()
     {
         if(overrideTargetPosition != null){
-            targetPosition = overrideTargetPosition.transform.position;
+            TargetPosition = overrideTargetPosition.transform.position;
         }
 
-        if (Vector3.Distance(targetPosition, currentTarget) > 0.1f)
+        if (Vector3.Distance(TargetPosition, currentTarget) > 0.1f)
         {
-            ChangeTarget(targetPosition);
+            ChangeNavigationTarget(TargetPosition);
         }
 
         Vector3 positionDelta = (GetCurrentMoveTowardsPosition() - transform.position);
@@ -74,15 +73,15 @@ public class NavigationInput : MonoBehaviour
 
         if (currentPathIndex == currentPath.Length - 1)
         {
-            return targetPosition + randomPositionOffset;
+            return currentTarget + currentOffset;
         }
         else
         {
-            return currentPath[currentPathIndex].position + randomPositionOffset;
+            return currentPath[currentPathIndex].position + currentOffset;
         }
     }
 
-    private void ChangeTarget(Vector3 newTarget)
+    public void ChangeNavigationTarget(Vector3 newTarget)
     {
         currentTarget = newTarget;
         currentPath = nodeGroupBehavior.FindPath(transform.position, currentTarget);
@@ -96,8 +95,8 @@ public class NavigationInput : MonoBehaviour
         if(randomPositionOffset.magnitude == 0) return Vector3.zero;
 
         float offsetX = Random.Range(-maxbounds.x, maxbounds.x);
-        float offsetY = Random.Range(-maxbounds.y, maxbounds.y);
-        return new Vector3(offsetX, 0.0f, offsetY);
+        float offsetZ = Random.Range(-maxbounds.z, maxbounds.z);
+        return new Vector3(offsetX, 0.0f, offsetZ);
     }
 
     void OnDrawGizmosSelected()

@@ -17,9 +17,9 @@ public class ActorMover : Mover
     private void FixedUpdate()
     {
 
-        Vector3 desiredVel = new Vector3(MoveDir.x, rbody.velocity.y, MoveDir.z);
+        Vector3 desiredVel = new Vector3(MoveDir.x, 0.0f, MoveDir.z);
         desiredVel = desiredVel * maxSpeed;
-        rbody.velocity = desiredVel;
+        rbody.velocity = new Vector3(desiredVel.x, rbody.velocity.y, desiredVel.z);
     }
 
     public override void Move(Vector3 applyMovement)

@@ -13,8 +13,12 @@ public class Spawner : MonoBehaviour
     private float currentSpawnRate = 5.0f;
     private float timeStamp = 0.0f;
 
+    private Transform spawnedParent;
+
     private void Start() {
         StartWave(startWaveIndex);
+        spawnedParent = new GameObject("SpawnedParent").transform;
+        spawnedParent.transform.position = Vector3.zero;
     }
 
     private void Update() {
@@ -35,6 +39,8 @@ public class Spawner : MonoBehaviour
         
         Transform point = transform.GetChild(UnityEngine.Random.Range(0, transform.childCount));
         GameObject obj = Instantiate(spawnPrefab, point.position, point.rotation);
+        obj.transform.SetParent(spawnedParent);
+        
         ConstantInput constantInput = obj.GetComponent<ConstantInput>();
         constantInput.input = point.forward;
 
