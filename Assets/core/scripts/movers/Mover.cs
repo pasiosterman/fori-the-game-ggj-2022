@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Mover : MonoBehaviour
 {
-    public abstract void Move(Vector2 applyMovement);
+    public abstract void Move(Vector3 applyMovement);
 }

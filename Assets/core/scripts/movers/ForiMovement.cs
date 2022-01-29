@@ -52,8 +52,8 @@ public class ForiMovement : Mover
         rbody.AddForce(velocityChange, ForceMode.VelocityChange);
     }
 
-    public override void Move(Vector2 applyMovement)
+    public override void Move(Vector3 applyMovement)
     {
-        movement = applyMovement.y;
+        movement = applyMovement.z;
     }
 }
