@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.50717807, g: 0.5527812, b: 0.6223954, a: 1}
+  m_IndirectSpecularColor: {r: 0.50722826, g: 0.5528065, b: 0.6224094, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -547,15 +547,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367035077332584660, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.122183256
+      value: 0.12218327
       objectReference: {fileID: 0}
     - target: {fileID: 4367035077332584660, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000019764075
+      value: -0.000000012252042
       objectReference: {fileID: 0}
     - target: {fileID: 4367035077332584660, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000024330684
+      value: 0.0000000015082948
       objectReference: {fileID: 0}
     - target: {fileID: 5065662960633966456, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}
       propertyPath: m_RootOrder
@@ -623,15 +623,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851274058020352766, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.122183256
+      value: 0.12218327
       objectReference: {fileID: 0}
     - target: {fileID: 8851274058020352766, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000019764075
+      value: -0.000000012252042
       objectReference: {fileID: 0}
     - target: {fileID: 8851274058020352766, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000024330684
+      value: 0.0000000015082948
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18e1e1b7b3e7b0beb466e408987ff66, type: 3}

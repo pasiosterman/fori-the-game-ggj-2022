@@ -15,4 +15,9 @@ public class Mounter : MonoBehaviour
         mountedTo.Umount();
         transform.position = newPosition;
     }
+
+    public void SwapMountable(Mountable mountable){
+        Unmount();
+        mountable.AssignMounter(this);
+    }
 }

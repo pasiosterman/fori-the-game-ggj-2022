@@ -24,6 +24,19 @@ public class MountableGroup : MonoBehaviour
         return null;
     }
 
+    public Mounter GetFirstMounter(){
+
+        for (int i = 0; i < mountables.Length; i++)
+        {
+            Mountable it = mountables[i];
+            if (it.currentMounter != null)
+            {
+                return it.currentMounter;
+            }
+        }
+        return null;
+    }
+
     public bool HasFreeMountables
     {
         get
