@@ -10,6 +10,8 @@ public class PassangerDropper : MonoBehaviour
     public MountableGroup mountableGroup;
     public Transform dropPositionsParent;
 
+    public ForiStop[] foriStops;
+
     float collisionTimeStamp = 0.0f;
 
 
@@ -23,6 +25,8 @@ public class PassangerDropper : MonoBehaviour
         {
             Debug.LogError("Missing reference to mountableGroup", this);
         }
+
+        foriStops = FindObjectsOfType<ForiStop>();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -53,6 +57,11 @@ public class PassangerDropper : MonoBehaviour
             Vector3 dropPosition = GetRandomDropPosition();
             DropMounterToPosition(mounter, dropPosition);
             ClearObjectivesFromMounter(mounter);
+
+            for (int i = 0; i < foriStops.Length; i++)
+            {
+                foriStops[i].RemoveFromQueues(mounter);
+            }
 
             ActorModelChanger actorModelChanger = mounter.GetComponent<ActorModelChanger>();
             if (actorModelChanger != null)
