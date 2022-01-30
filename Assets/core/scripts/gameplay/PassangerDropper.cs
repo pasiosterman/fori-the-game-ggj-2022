@@ -5,15 +5,13 @@ using UnityEngine;
 public class PassangerDropper : MonoBehaviour
 {
     const string BOAT_TAG = "Boat";
-
     public float coolDown = 1.0f;
     public MountableGroup mountableGroup;
     public Transform dropPositionsParent;
-
     public ForiStop[] foriStops;
-
     float collisionTimeStamp = 0.0f;
 
+    List<Mounter> droppedPassangers = new List<Mounter>();
 
     private void Start()
     {
@@ -57,6 +55,9 @@ public class PassangerDropper : MonoBehaviour
             Vector3 dropPosition = GetRandomDropPosition();
             DropMounterToPosition(mounter, dropPosition);
             ClearObjectivesFromMounter(mounter);
+            if(droppedPassangers.Count > 30){
+                DespawnDroppedPassanger();
+            }
 
             for (int i = 0; i < foriStops.Length; i++)
             {
@@ -71,20 +72,33 @@ public class PassangerDropper : MonoBehaviour
         }
     }
 
-    private static void DropMounterToPosition(Mounter mounter, Vector3 dropPosition)
+    private void DropMounterToPosition(Mounter mounter, Vector3 dropPosition)
     {
         GameObject go = new GameObject("DropPoint");
         go.transform.position = dropPosition;
         Mountable dropMountable = go.AddComponent<Mountable>();
         mounter.SwapMountable(dropMountable);
+        droppedPassangers.Add(mounter);
     }
 
-    private static void ClearObjectivesFromMounter(Mounter mounter)
+    private void ClearObjectivesFromMounter(Mounter mounter)
     {
         AIController controller = mounter.GetComponent<AIController>();
         if (controller != null)
         {
             controller.AssignObjectives(new BaseObjective[0]);
+        }
+    }
+
+    private void DespawnDroppedPassanger(){
+
+        if(droppedPassangers.Count > 0){
+
+            Mounter mounter = droppedPassangers[0];
+            droppedPassangers.RemoveAt(0);
+            if(mounter != null){
+                Destroy(mounter);
+            }
         }
     }
 
