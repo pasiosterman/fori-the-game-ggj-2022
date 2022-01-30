@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4192632576275279978}
   - component: {fileID: 5408578100401277608}
   - component: {fileID: 3046135827101009404}
+  - component: {fileID: 8664095141325963432}
   m_Layer: 8
   m_Name: Matkustaja
   m_TagString: Untagged
@@ -112,6 +113,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountedTo: {fileID: 0}
+--- !u!114 &8664095141325963432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2295019192943873254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db531bbade3632d22adfbd4d2dc850b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models:
+  - {fileID: 5242878962667871610}
+  - {fileID: 5899544050470303461}
 --- !u!1 &6417105997762899175
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76dae7ca84248fc4e86e5d561ae6f279, type: 3}
+--- !u!1 &5242878962667871610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 76dae7ca84248fc4e86e5d561ae6f279, type: 3}
+  m_PrefabInstance: {fileID: 4900790998602539051}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4866599061427292096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 76dae7ca84248fc4e86e5d561ae6f279, type: 3}
@@ -391,5 +412,10 @@ PrefabInstance:
 --- !u!4 &6527040368175574111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 941feb5fe35489642adf19975617e693, type: 3}
+  m_PrefabInstance: {fileID: 6709815748086205364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5899544050470303461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 941feb5fe35489642adf19975617e693, type: 3}
   m_PrefabInstance: {fileID: 6709815748086205364}
   m_PrefabAsset: {fileID: 0}

@@ -66,6 +66,15 @@ public class ForiStop : MonoBehaviour
         }
     }
 
+    internal void RemoveFromQueues(Mounter mounter)
+    {
+        if(entryQueue.Contains(mounter))
+            entryQueue.Remove(mounter);
+
+        if(exitQueue.Contains(mounter))
+            exitQueue.Remove(mounter);
+    }
+
     public void QueueToFori(Mounter passanger)
     {
         if (!entryQueue.Contains(passanger))

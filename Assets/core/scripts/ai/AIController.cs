@@ -69,6 +69,7 @@ public class AIController : MonoBehaviour
     {
         if(!initialized) Initialize();
 
+        currentObjective = null;
         objectives.Clear();
         objectives.AddRange(newObjectives);
     }
