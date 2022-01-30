@@ -15,4 +15,10 @@ MonoBehaviour:
   spawnerWaveEntries:
   - Prefab: {fileID: 2295019192943873254, guid: 271398eee3f71ce4e9431b10bbf540fc, type: 3}
     chance: 10
+  - Prefab: {fileID: 2656216966950594653, guid: a87e41474d05f3b4684218f534d0781f, type: 3}
+    chance: 10
+  - Prefab: {fileID: 4942360616426837729, guid: 5c6675e408145244aadaab3d363bc73c, type: 3}
+    chance: 10
+  - Prefab: {fileID: 6183673820340163322, guid: c278bea008b4560418e8cc1653a8caf4, type: 3}
+    chance: 10
   spawnRate: 10
