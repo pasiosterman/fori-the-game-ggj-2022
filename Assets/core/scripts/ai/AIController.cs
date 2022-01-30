@@ -13,10 +13,18 @@ public class AIController : MonoBehaviour
     BaseObjective currentObjective;
     float tickTimer = 0.0f;
 
+    bool initialized = false;
+
     void Start()
+    {
+        if(!initialized) Initialize();
+    }
+
+    private void Initialize()
     {
         navigationInput = GetComponent<NavigationInput>();
         mounter = GetComponent<Mounter>();
+        initialized = true;
     }
 
     public void CompleteCurrentObjective()
@@ -52,13 +60,22 @@ public class AIController : MonoBehaviour
 
     public void NavigateToPosition(Vector3 position)
     {
+        if(!initialized) Initialize();
+
         navigationInput.NavigateTowards(position);
     }
 
     public void AssignObjectives(BaseObjective[] newObjectives)
     {
+        if(!initialized) Initialize();
+
         objectives.Clear();
         objectives.AddRange(newObjectives);
+    }
+
+    public void AssignNodeGroup(NodeGroupBehavior nodeGroup){
+        if(!initialized) Initialize();
+        navigationInput.nodeGroupBehavior = nodeGroup;
     }
 
     public HashSet<string> flags = new HashSet<string>();
