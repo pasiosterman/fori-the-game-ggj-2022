@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61f74e6e1928a66ed89d20c12014d3bb, type: 3}
-  m_Name: WaveConfiguration_Easy
+  m_Name: Boats_Easy
   m_EditorClassIdentifier: 
   spawnerWaveEntries:
   - Prefab: {fileID: 1378835575462117692, guid: c743399dcfe2a53429c6743115273af2, type: 3}

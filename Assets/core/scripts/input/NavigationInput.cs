@@ -27,6 +27,8 @@ public class NavigationInput : MonoBehaviour
 
     void Update()
     {
+        if(nodeGroupBehavior == null) return;
+
         if(overrideTargetPosition != null){
             targetPosition = overrideTargetPosition.transform.position;
         }

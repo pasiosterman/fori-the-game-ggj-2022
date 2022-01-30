@@ -18,4 +18,9 @@ public class ExitAreaObjective : BaseObjective
             controller.CompleteCurrentObjective();
         }
     }
+
+    public override void CompleteObjective(AIController controller)
+    {
+        Destroy(controller.gameObject, 0.5f);
+    }
 }
