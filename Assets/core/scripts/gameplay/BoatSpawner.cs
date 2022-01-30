@@ -19,7 +19,7 @@ public class BoatSpawner : Spawner
             Debug.LogError("Spawned boat missing ConstantInput component!");
         }
 
-        Debug.Log("Spawned boat: " + pointAndSpawnedInstance.Item1.name);
+        Debug.Log("Spawned boat: " + pointAndSpawnedInstance.Item2.name);
         return pointAndSpawnedInstance;
     }
 }

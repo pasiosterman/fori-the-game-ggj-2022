@@ -42,7 +42,6 @@ public class PassangerSpawner : Spawner
 
     public override Tuple<Transform, GameObject> SpawnRandomEntryFromSpawnTable()
     {
-        Debug.Log("SPAWNMING PASSANGER");
         var value = base.SpawnRandomEntryFromSpawnTable();
         AIController aIController = value.Item2.GetComponent<AIController>();
         if (aIController != null)
@@ -50,7 +49,6 @@ public class PassangerSpawner : Spawner
             if(nodeGroupToAssign != null){
                 aIController.AssignNodeGroup(nodeGroupToAssign);
             }
-              Debug.Log("Assigning Objectives");
             AssignObjectives(aIController, objectivesToAssign);
         }
         else
