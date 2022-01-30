@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerWaveEntries:
   - Prefab: {fileID: 1378835575462117692, guid: c743399dcfe2a53429c6743115273af2, type: 3}
-    chance: 20
-  - Prefab: {fileID: 1271638708382310067, guid: 456817e3d4f5e3747a39edabf3b3f7e2, type: 3}
     chance: 10
+  - Prefab: {fileID: 1271638708382310067, guid: 456817e3d4f5e3747a39edabf3b3f7e2, type: 3}
+    chance: 7
+  - Prefab: {fileID: 4897744067795357128, guid: 071bc37d99fa8aa47bd95fad30c556f7, type: 3}
+    chance: 2
+  - Prefab: {fileID: 7025081852088453796, guid: 5d98441adaaafe849b24687c13902b35, type: 3}
+    chance: 2
   spawnRate: 5
