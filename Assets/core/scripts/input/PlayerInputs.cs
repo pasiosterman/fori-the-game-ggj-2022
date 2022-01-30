@@ -19,5 +19,9 @@ public class PlayerInputs : MonoBehaviour
         if(mover != null){
             mover.Move(Movement);
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
+        }
     }
 }
