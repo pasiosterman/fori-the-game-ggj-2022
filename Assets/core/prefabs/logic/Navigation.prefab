@@ -2045,7 +2045,7 @@ MonoBehaviour:
   fori: {fileID: 0}
   oppositeStop: {fileID: 4591141670729866142}
   timeBetweenBoardings: 0.5
-  randomPositionOffset: {x: 0, y: 0, z: 0}
+  randomPositionOffset: {x: 2, y: 2, z: 2}
 --- !u!1 &4591141670526399846
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   fori: {fileID: 0}
   oppositeStop: {fileID: 4591141670510517114}
   timeBetweenBoardings: 0.5
-  randomPositionOffset: {x: 0, y: 0, z: 0}
+  randomPositionOffset: {x: 2, y: 2, z: 2}
 --- !u!1 &4591141670826155414
 GameObject:
   m_ObjectHideFlags: 0
