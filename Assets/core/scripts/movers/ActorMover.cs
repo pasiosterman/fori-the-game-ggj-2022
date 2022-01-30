@@ -10,10 +10,12 @@ public class ActorMover : Mover
 
     Transform mountedTo;
 
+    float startY = 0.0f;
 
     private void Start()
     {
         rbody = GetComponent<Rigidbody>();
+        startY = transform.position.y;
     }
 
     private void FixedUpdate()

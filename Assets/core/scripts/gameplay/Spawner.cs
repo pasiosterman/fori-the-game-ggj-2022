@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour
     protected int[,] currentSpawnTable = new int[0, 0];
     protected float currentSpawnRate = 5.0f;
     protected float timeStamp = 0.0f;
-
     protected Transform spawnedParent;
 
     protected virtual void Start()
