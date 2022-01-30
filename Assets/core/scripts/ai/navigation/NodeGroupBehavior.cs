@@ -5,6 +5,7 @@ using UnityEngine;
 public class NodeGroupBehavior : MonoBehaviour
 {
     private NodeGroup nodeGroup;
+    private NodeBehavior[] nodeBehaviors;
 
     private void Awake() {
         nodeGroup = CreateNodeGroup();
@@ -12,7 +13,7 @@ public class NodeGroupBehavior : MonoBehaviour
 
     public NodeGroup CreateNodeGroup()
     {
-        NodeBehavior[] nodeBehaviors = GetComponentsInChildren<NodeBehavior>();
+        nodeBehaviors = GetComponentsInChildren<NodeBehavior>();
         Dictionary<NodeBehavior, Node> nodeDict = new Dictionary<NodeBehavior, Node>();
         for (int i = 0; i < nodeBehaviors.Length; i++)
         {

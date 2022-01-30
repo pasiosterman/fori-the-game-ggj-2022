@@ -17,10 +17,17 @@ public class ForiMovement : Mover
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
+        if(pointA == null)
+            Debug.LogError("No pointA assigned to Fori!");
+
+        if(pointB == null)
+            Debug.LogError("No pointB assigned to Fori!");
     }
 
     private void FixedUpdate()
     {
+        if(pointA == null || pointB == null) return;
+
         if (movement > 0.001f)
         {
             MoveTowardsTargetTransform(pointA);

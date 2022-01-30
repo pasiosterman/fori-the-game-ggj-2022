@@ -32,6 +32,11 @@ public class NodeBehavior : MonoBehaviour
         {
             nodeBehavior.transform.SetParent(transform.parent);
             nodeBehavior.transform.position = transform.position;
+
+#if UNITY_EDITOR
+            UnityEditor.Selection.activeGameObject=nodeBehavior.gameObject;
+#endif
+            
         }
     }
 }
